@@ -1,24 +1,46 @@
-// Pure function
+// // --------- Basics of Functional Programming ---------
 
-const add = (a, b) => a+b ;
+// // Pure function
 
-// Impure function
-// let total = 0;
-// const addTotal = (amount) => (total = total+amount);
+// const add = (a, b) => a+b ;
 
-// console.log(addTotal(5));
-// console.log(total);
+// // Impure function
+// // let total = 0;
+// // const addTotal = (amount) => (total = total+amount);
+
+// // console.log(addTotal(5));
+// // console.log(total);
 
 
-const updateDate = () => {
-    new Date();
+// const updateDate = () => {
+//     new Date();
+// };
+
+// const randomNumber = (amount) => {
+//     return amount+Math.random();
+// };
+
+// console.log(randomNumber(3));
+// console.log(randomNumber(3));
+// console.log(randomNumber(3));
+// console.log(randomNumber(3));
+
+
+
+//  -------- Understanding mutation and ways to avoid it ------------
+
+const employee = {
+    name: "Mir",
+    address: {country: "Bangladesh", city: "Dhaka"},
 };
 
-const randomNumber = (amount) => {
-    return amount+Math.random();
+const employee2 = {
+    ...employee,
+    name: "Mezba",
+    address: {...employee.address, city: "Chittagong"},
 };
 
-console.log(randomNumber(3));
-console.log(randomNumber(3));
-console.log(randomNumber(3));
-console.log(randomNumber(3));
+console.log(employee==employee2);
+
+console.log(employee);
+console.log(employee2);
