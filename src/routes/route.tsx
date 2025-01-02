@@ -13,6 +13,10 @@ const routes = createBrowserRouter([
         path: "users",
         element: <Users />,
       },
+      {
+        index: true,
+        element: <Tasks />,
+      },
     ],
   },
   {
