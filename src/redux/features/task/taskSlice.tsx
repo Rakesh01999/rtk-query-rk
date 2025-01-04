@@ -3,11 +3,11 @@ import { ITask } from "@/types";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface InitialState {
-    tasks: ITask[];
-    filter: "all" | "high" | "medium" | "low";
+  tasks: ITask[];
+  filter: "all" | "high" | "medium" | "low";
 }
 
-const initialState : InitialState = {
+const initialState: InitialState = {
   tasks: [
     {
       id: "asdfgasdfg",
@@ -23,7 +23,7 @@ const initialState : InitialState = {
       description: "Create Home page, and routing",
       dueDate: "2025-11",
       isCompleted: false,
-      priority: "High",
+      priority: "Medium",
     },
   ],
   filter: "all",
@@ -36,11 +36,11 @@ const taskSlice = createSlice({
 });
 
 export const selectTasks = (state: RootState) => {
-  return state.todo.tasks ;
+  return state.todo.tasks;
 };
 
 export const selectFilter = (state: RootState) => {
-  return state.todo.filter ;
+  return state.todo.filter;
 };
 
 export default taskSlice.reducer;
