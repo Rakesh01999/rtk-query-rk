@@ -17,6 +17,14 @@ const initialState : InitialState = {
       isCompleted: false,
       priority: "High",
     },
+    {
+      id: "asdfgasdfg",
+      title: "Init Git",
+      description: "Create Home page, and routing",
+      dueDate: "2025-11",
+      isCompleted: false,
+      priority: "High",
+    },
   ],
   filter: "all",
 };
@@ -29,6 +37,10 @@ const taskSlice = createSlice({
 
 export const selectTasks = (state: RootState) => {
   return state.todo.tasks ;
+};
+
+export const selectFilter = (state: RootState) => {
+  return state.todo.filter ;
 };
 
 export default taskSlice.reducer;
