@@ -17,7 +17,11 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
@@ -27,6 +31,8 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
+import { addTask } from "@/redux/features/task/taskSlice";
+import { useAppDispatch } from "@/redux/hook";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -34,9 +40,13 @@ import { useForm } from "react-hook-form";
 export function AddTaskModal() {
   const form = useForm();
 
+  const dispatch = useAppDispatch();
+  
   const onSubmit = (data) => {
     console.log(data);
+    dispatch(addTask(data));
   };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -75,7 +85,6 @@ export function AddTaskModal() {
                 </FormItem>
               )}
             />
-
             <FormField
               control={form.control}
               name="priority"
@@ -141,7 +150,9 @@ export function AddTaskModal() {
               )}
             />
             <DialogFooter>
-              <Button className="mt-5" type="submit">Save changes</Button>
+              <Button className="mt-5" type="submit">
+                Save changes
+              </Button>
             </DialogFooter>
           </form>
         </Form>
