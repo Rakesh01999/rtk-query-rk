@@ -75,7 +75,7 @@ export function AddTaskModal() {
             />
             <FormField
               control={form.control}
-              name="Description"
+              name="description"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Description</FormLabel>
