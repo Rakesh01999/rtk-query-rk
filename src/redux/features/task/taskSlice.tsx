@@ -30,6 +30,6 @@ export const selectFilter = (state: RootState) => {
   return state.todo.filter;
 };
 
-export const { addTask } = taskSlice.actions ;
+export const { addTask } = taskSlice.actions;
 
 export default taskSlice.reducer;
