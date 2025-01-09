@@ -9,8 +9,5 @@ export interface ITask {
 
 export interface IUser {
     id: string;
-    title: string;
-    description: string;
-    dueDate: string;
-    isCompleted: boolean;
+    name: string;
 }
