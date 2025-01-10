@@ -17,4 +17,4 @@ export const baseApi = createApi({
     }),
 });
 
-export const { useGetTasksQuery } = baseApi;
+export const { useGetTasksQuery, useCreateTasksMutation } = baseApi;
