@@ -8,7 +8,11 @@ export const baseApi = createApi({
             query: () => "/tasks",
         }),
         createTasks: buider.mutation({
-            query: () => "/tasks",
+            query: (taskData) => ({
+                url: "/tasks",
+                method: "POST",
+                body: taskData,
+            }),
         }),
     }),
 });
