@@ -28,7 +28,6 @@ export default function UserCard({ user }: IProps) {
         // onClick={() => removeUser(user.id)}
       >
         <Trash2Icon className="mr-2 h-4 w-4" />
-        Remove User
       </Button>
     </div>
   );
