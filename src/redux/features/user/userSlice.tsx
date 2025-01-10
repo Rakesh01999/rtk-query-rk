@@ -30,7 +30,7 @@ const userSlice = createSlice({
   },
 });
 
-export const selectUsers = (state: RootState) =>  state.user ;
+export const selectUsers = (state: RootState) =>  state.user.users ;
 
 export const { addUser, removeUser } = userSlice.actions;
 
