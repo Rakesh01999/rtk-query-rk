@@ -1,14 +1,13 @@
 import { AddTaskModal } from "@/components/module/tasks/AddTaskModal";
 import TaskCard from "@/components/module/tasks/TaskCard";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { selectTasks, updateFilter } from "@/redux/features/task/taskSlice";
-import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { useGetTasksQuery } from "@/redux/api/baseApi";
+import { updateFilter } from "@/redux/features/task/taskSlice";
+// import { useAppDispatch, useAppSelector } from "@/redux/hook";
 
 export default function Tasks() {
-  const tasks = useAppSelector(selectTasks);
-  const dispatch = useAppDispatch();
-
-  console.log(tasks);
+  const { data, isLoading, isError } = useGetTasksQuery(undefined);
+  console.log({ data, isLoading, isError });
 
   return (
     <div className="mx-auto max-w-7xl px-5 mt-20">
@@ -17,25 +16,21 @@ export default function Tasks() {
         <Tabs defaultValue="all">
           <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger
-              onClick={() => dispatch(updateFilter("all"))}
               value="all"
             >
               All
             </TabsTrigger>
             <TabsTrigger
-              onClick={() => dispatch(updateFilter("low"))}
               value="low"
             >
               Low
             </TabsTrigger>
             <TabsTrigger
-              onClick={() => dispatch(updateFilter("medium"))}
               value="medium"
             >
               Medium
             </TabsTrigger>
             <TabsTrigger
-              onClick={() => dispatch(updateFilter("high"))}
               value="High"
             >
               high
