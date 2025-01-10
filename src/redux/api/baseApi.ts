@@ -7,6 +7,9 @@ export const baseApi = createApi({
         getTasks: buider.query({
             query: () => "/tasks",
         }),
+        createTasks: buider.mutation({
+            query: () => "/tasks",
+        }),
     }),
 });
 
