@@ -33,8 +33,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { useCreateTasksMutation } from "@/redux/api/baseApi";
 // import { addTask } from "@/redux/features/task/taskSlice";
-import { selectUsers } from "@/redux/features/user/userSlice";
-import { useAppSelector } from "@/redux/hook";
+// import { selectUsers } from "@/redux/features/user/userSlice";
+// import { useAppSelector } from "@/redux/hook";
 // import { ITask } from "@/types";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
@@ -43,8 +43,8 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 export function AddTaskModal() {
   const [open, setOpen] = useState(false);
-  const users = useAppSelector(selectUsers);
-  console.log(users);
+  // const users = useAppSelector(selectUsers);
+  // console.log(users);
   const form = useForm();
 
   // const [createTask, { data, isLoading, isError }] = useCreateTasksMutation();

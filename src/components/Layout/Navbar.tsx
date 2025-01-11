@@ -9,7 +9,7 @@ export default function Navbar() {
         <Logo /> <span className="font-bold ml-2">TaskMaster</span>
       </div>
       <Link to="/">Tasks</Link>
-      <Link to="/users">Users</Link>
+      {/* <Link to="/users">Users</Link> */}
       <div className="ml-auto">
         <ModeToggle />
       </div>
