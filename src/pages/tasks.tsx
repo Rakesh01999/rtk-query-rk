@@ -6,7 +6,12 @@ import { ITask } from "@/types";
 // import { useAppDispatch, useAppSelector } from "@/redux/hook";
 
 export default function Tasks() {
-  const { data, isLoading } = useGetTasksQuery(undefined);
+  const { data, isLoading } = useGetTasksQuery(undefined, {
+    pollingInterval: 30000,
+    refetchOnFocus: true,
+    refetchOnMountOrArgChange: true,
+    refetchOnReconnect: true,
+  });
 
   if (isLoading) {
     return <p>Loading...</p>;
